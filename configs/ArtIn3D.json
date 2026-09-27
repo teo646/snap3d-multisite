@@ -1,24 +1,29 @@
 {
-  "siteName": "3Dfit",
-  "metaDescription": "사진만으로 만든 3D 착용 뷰. 기존 상품 상세페이지에 그대로 붙여 고객이 직접 핏을 돌려보게 합니다.",
-  "tagline": "옷이 아닌 핏을 보여줍니다",
+  "siteName": "ArtIn3D",
+  "metaDescription": "사진만으로 만든 3D 작품 뷰. 기존 상품 상세페이지에 그대로 붙여 고객이 작품을 눈앞에서 처럼 봅니다.",
+  "tagline": "작품 사진이 아닌 작품 자체를 보여줍니다",
   "accent": "#ff5252",
-  "logo": { "src": "../assets/logo-placeholder.png", "alt": "" },
-  "shopName": "YOUR STORE",
+  "favicon": "../assets/images/favicon-ArtIn3D.png",
+  "logo": { "src": "../assets/images/logo-ArtIn3D.png", "alt": "" },
+  "shopName": "EXAMPLE STORE",
   "product": {
-    "category": "상의 › 맨투맨",
-    "name": "오버핏 워싱 맨투맨",
-    "colorway": "올리브 그레이",
-    "price": "39,000원",
+    "category": "그림 › 유화",
+    "name": "The Holy Family with Saint John the Baptist",
+    "price": "1,000,000원",
     "image": {
       "src": "../assets/product/shot-1.png",
-      "alt": "맨투맨을 입고 의자에 앉은 모델의 정면 사진"
+      "alt": "Holy Family 사진"
     },
-    "viewerLabel": "맨투맨 착용 3D 뷰. 드래그해서 돌려볼 수 있습니다."
+    "viewerLabel": "Holy Family 3D 뷰. 드래그해서 돌려볼 수 있습니다.",
+    "options": [
+      { "label": "작가", "type": "text", "value": "라파엘로 산치오" },
+      { "label": "제작년도", "type": "text", "value": "1518" }
+    ]
   },
   "featureCards": [
-    { "icon": "ph-camera", "title": "사진만으로 생성", "desc": "" },
-    { "icon": "ph-plugs-connected", "title": "간단한 기존 웹사이트 연동", "desc": "" }
+    { "icon": "ph-camera", "title": "사진만으로 제작", "desc": "다양한 각도에서 촬영한 작품의 사진만으로 3차원 렌더링이 가능합니다." },
+    { "icon": "ph-plugs-connected", "title": "간단한 웹사이트 연동", "desc": "js코드 몇줄로 기존 웹사이트에 렌더러를 넣을 수 있습니다." },
+    { "icon": "ph-check-circle", "title": "정확한 재현", "desc": "생성형 모델이 아닙니다. 작품을 있는 그대로 재현합니다." }
   ],
   "bundle": "../assets/bundles/holy_family.snap3d"
 }

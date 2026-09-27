@@ -82,6 +82,7 @@
 .opt-row { display: grid; grid-template-columns: 56px 1fr; align-items: center; gap: 12px; }
 .opt-row + .opt-row { margin-top: 14px; }
 .opt-label { font-size: 14px; color: var(--ink-2); }
+.opt-value { font-size: 14px; color: var(--ink); }
 .swatch { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; }
 .swatch::before {
   content: ''; width: 18px; height: 18px; border-radius: 50%;

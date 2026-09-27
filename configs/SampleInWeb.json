@@ -8,13 +8,16 @@
   "product": {
     "category": "상의 › 맨투맨",
     "name": "오버핏 워싱 맨투맨",
-    "colorway": "올리브 그레이",
     "price": "39,000원",
     "image": {
       "src": "../assets/product/shot-1.png",
       "alt": "맨투맨을 입고 의자에 앉은 모델의 정면 사진"
     },
-    "viewerLabel": "맨투맨 착용 3D 뷰. 드래그해서 돌려볼 수 있습니다."
+    "viewerLabel": "맨투맨 착용 3D 뷰. 드래그해서 돌려볼 수 있습니다.",
+    "options": [
+      { "label": "색상", "type": "swatch", "value": "올리브 그레이" },
+      { "label": "사이즈", "type": "radio", "name": "size", "values": ["S", "M", "L", "XL"], "default": "M" }
+    ]
   },
   "featureCards": [
     { "icon": "ph-camera", "title": "사진만으로 생성", "desc": "" },

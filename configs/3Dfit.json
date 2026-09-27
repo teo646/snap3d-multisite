@@ -3,24 +3,27 @@
   "metaDescription": "사진만으로 만든 3D 착용 뷰. 기존 상품 상세페이지에 그대로 붙여 고객이 직접 핏을 돌려보게 합니다.",
   "tagline": "옷이 아닌 핏을 보여줍니다.",
   "accent": "#8d919b",
-  "favicon": "../assets/favicon.png",
-  "logo": { "src": "../assets/logo-3dfit.png", "alt": "" },
+  "favicon": "../assets/images/favicon-3Dfit.png",
+  "logo": { "src": "../assets/images/logo-3Dfit.png", "alt": "" },
   "shopName": "EXAMPLE STORE",
   "product": {
     "category": "상의 › 맨투맨",
     "name": "워싱 맨투맨",
-    "colorway": "올리브 그레이",
     "price": "39,000원",
     "image": {
       "src": "../assets/product/shot-1.png",
       "alt": "맨투맨을 입고 의자에 앉은 모델의 정면 사진"
     },
-    "viewerLabel": "맨투맨 착용 3D 뷰. 드래그해서 돌려볼 수 있습니다."
+    "viewerLabel": "맨투맨 착용 3D 뷰. 드래그해서 돌려볼 수 있습니다.",
+    "options": [
+      { "label": "색상", "type": "swatch", "value": "올리브 그레이" },
+      { "label": "사이즈", "type": "radio", "name": "size", "values": ["S", "M", "L", "XL"], "default": "M" }
+    ]
   },
   "featureCards": [
     { "icon": "ph-camera", "title": "사진만으로 생성", "desc": "다양한 각도에서 촬영한 모델의 사진만으로 3차원 렌더링 결과물을 생성합니다." },
     { "icon": "ph-plugs-connected", "title": "간단한 웹사이트 연동", "desc": "js코드 몇줄로 기존 웹사이트에 렌더러를 넣을 수 있습니다." },
-    { "icon": "ph-check-circle", "title": "정확한 재현", "desc": "생성형 모델이 아닙니다. Hallucination없이 의류를 정확하게 재현합니다." }
+    { "icon": "ph-check-circle", "title": "정확한 재현", "desc": "추론형 모델이 아닙니다. 왜곡없이 의류를 정확하게 재현합니다." }
   ],
   "bundle": "../assets/bundles/model_in_clothes.snap3d"
 }

@@ -47,7 +47,49 @@
     $('product-crumbs').textContent = config.product.category;
     $('product-name').textContent = config.product.name;
     $('product-price').textContent = config.product.price;
-    $('product-swatch').textContent = config.product.colorway;
+
+    const options = $('options');
+    options.innerHTML = '';
+    (config.product.options || []).forEach((opt, i) => {
+      const row = document.createElement('div');
+      row.className = 'opt-row';
+
+      const label = document.createElement('span');
+      label.className = 'opt-label';
+      label.textContent = opt.label;
+      row.append(label);
+
+      if (opt.type === 'radio') {
+        const labelId = `opt-label-${i}`;
+        label.id = labelId;
+        const group = document.createElement('div');
+        group.className = 'sizes';
+        group.setAttribute('role', 'radiogroup');
+        group.setAttribute('aria-labelledby', labelId);
+        for (const value of opt.values) {
+          const choice = document.createElement('label');
+          const input = document.createElement('input');
+          input.type = 'radio';
+          input.name = opt.name || `opt-${i}`;
+          input.value = value;
+          if (value === opt.default) input.checked = true;
+          const span = document.createElement('span');
+          span.textContent = value;
+          choice.append(input, span);
+          group.append(choice);
+        }
+        row.append(group);
+      } else {
+        // "swatch" (a color dot, via CSS) and "text" (a plain value) both
+        // render as one labeled value - only the dot differs, by class.
+        const span = document.createElement('span');
+        span.className = opt.type === 'swatch' ? 'swatch' : 'opt-value';
+        span.textContent = opt.value;
+        row.append(span);
+      }
+
+      options.append(row);
+    });
 
     const list = $('feature-cards');
     list.innerHTML = '';
