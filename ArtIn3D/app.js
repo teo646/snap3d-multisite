@@ -8,10 +8,11 @@
 // in sync by hand. Sizing, framing and resize handling are entirely the viewer's job;
 // this page only sets the canvas's CSS box and swaps tabs.
 //
-// index.html and this file are shared, byte-for-byte, across every site in this repo
-// (3Dfit, ArtIn3D, SampleInWeb, ...). The only thing that differs between sites is
-// ./config.json, fetched below - site name, tagline, logo, accent color, shop copy,
-// product fields, footer points and the snap3d bundle path all come from there.
+// index.html, this file and the two stylesheets (style.css, shop.css) are shared,
+// byte-for-byte, across every site in this repo (3Dfit, ArtIn3D, SampleInWeb, ...).
+// The only thing that differs between sites is ./config.json, fetched below - site
+// name, tagline, logo, accent color, shop copy, product fields, feature cards and
+// the snap3d bundle path all come from there.
 
 (() => {
   const $ = (id) => document.getElementById(id);
@@ -45,19 +46,25 @@
 
     $('product-crumbs').textContent = config.product.category;
     $('product-name').textContent = config.product.name;
-    $('product-colorway').textContent = config.product.colorway;
     $('product-price').textContent = config.product.price;
     $('product-swatch').textContent = config.product.colorway;
 
-    const list = $('footer-points');
+    const list = $('feature-cards');
     list.innerHTML = '';
-    for (const point of config.footerPoints) {
-      const li = document.createElement('li');
+    for (const card of config.featureCards) {
+      const el = document.createElement('div');
+      el.className = 'card feature-card';
+      const title = document.createElement('p');
+      title.className = 'feature-card-title';
       const icon = document.createElement('i');
-      icon.className = `ph ${point.icon}`;
+      icon.className = `ph ${card.icon}`;
       icon.setAttribute('aria-hidden', 'true');
-      li.append(icon, document.createTextNode(point.text));
-      list.append(li);
+      title.append(icon, document.createTextNode(card.title));
+      const desc = document.createElement('p');
+      desc.className = 'feature-card-desc';
+      desc.textContent = card.desc;
+      el.append(title, desc);
+      list.append(el);
     }
 
     return config.bundle;

@@ -16,9 +16,9 @@
     },
     "viewerLabel": "맨투맨 착용 3D 뷰. 드래그해서 돌려볼 수 있습니다."
   },
-  "footerPoints": [
-    { "icon": "ph-camera", "text": "사진만으로 생성" },
-    { "icon": "ph-plugs-connected", "text": "간단한 기존 웹사이트 연동" }
+  "featureCards": [
+    { "icon": "ph-camera", "title": "사진만으로 생성", "desc": "" },
+    { "icon": "ph-plugs-connected", "title": "간단한 기존 웹사이트 연동", "desc": "" }
   ],
   "bundle": "./bundle/model_in_clothes.snap3d"
 }

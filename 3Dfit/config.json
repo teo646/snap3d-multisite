@@ -1,13 +1,14 @@
 {
-  "siteName": "3Dfit",
+  "siteName": "3D fit",
   "metaDescription": "사진만으로 만든 3D 착용 뷰. 기존 상품 상세페이지에 그대로 붙여 고객이 직접 핏을 돌려보게 합니다.",
-  "tagline": "옷이 아닌 핏을 보여줍니다",
-  "accent": "#ff5252",
+  "tagline": "옷이 아닌 핏을 보여줍니다.",
+  "accent": "#8d919b",
+  "favicon": "./assets/favicon.png",
   "logo": { "src": "./assets/3dfit-logo.png", "alt": "" },
-  "shopName": "YOUR STORE",
+  "shopName": "EXAMPLE STORE",
   "product": {
     "category": "상의 › 맨투맨",
-    "name": "오버핏 워싱 맨투맨",
+    "name": "워싱 맨투맨",
     "colorway": "올리브 그레이",
     "price": "39,000원",
     "image": {
@@ -16,9 +17,10 @@
     },
     "viewerLabel": "맨투맨 착용 3D 뷰. 드래그해서 돌려볼 수 있습니다."
   },
-  "footerPoints": [
-    { "icon": "ph-camera", "text": "사진만으로 생성" },
-    { "icon": "ph-plugs-connected", "text": "간단한 기존 웹사이트 연동" }
+  "featureCards": [
+    { "icon": "ph-camera", "title": "사진만으로 생성", "desc": "다양한 각도에서 촬영한 모델의 사진만으로 3차원 렌더링 결과물을 생성합니다." },
+    { "icon": "ph-plugs-connected", "title": "간단한 웹사이트 연동", "desc": "js코드 몇줄로 기존 웹사이트에 렌더러를 넣을 수 있습니다." },
+    { "icon": "ph-check-circle", "title": "정확한 재현", "desc": "생성형 모델이 아닙니다. Hallucination없이 의류를 정확하게 재현합니다." }
   ],
   "bundle": "./bundle/model_in_clothes.snap3d"
 }
