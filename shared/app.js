@@ -97,7 +97,7 @@
       ready = true;
       stage.classList.add('live');
       afterTab.removeAttribute('data-loading');
-      if (view === 'before') viewer.stop(); // nothing on screen to draw for
+      show('after');
     }
 
     function onReadyFailed() {} // onError already reported it; this only stops the rejection
@@ -132,13 +132,6 @@
     }
 
     for (const tab of tabs) tab.addEventListener('click', () => show(tab.dataset.view));
-    switcher.addEventListener('keydown', (e) => {
-      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) return;
-      e.preventDefault();
-      const next = e.key === 'ArrowLeft' || e.key === 'Home' ? 'before' : 'after';
-      show(next, { focus: true });
-      tabs.find((t) => t.dataset.view === next).focus();
-    });
 
     // ---------- the store's own buttons ----------
 
@@ -161,7 +154,8 @@
     // ---------- viewer ----------
 
     const viewer = new Snap3dViewer(canvas, BUNDLE, {
-      loadingIndicator: { color: getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#ff5252' },
+      loadingIndicator: { color: '#ff5252' }, // snap3d's own accent; the bar/MB-counter/
+                                               // error text themselves are the viewer's
       passthrough: true, // #canvas overlaps the buy box (see --viewer-scale in index.html)
       onError: fail,
     });
