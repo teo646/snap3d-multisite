@@ -1,0 +1,24 @@
+{
+  "siteName": "3Dfit",
+  "metaDescription": "사진만으로 만든 3D 착용 뷰. 기존 상품 상세페이지에 그대로 붙여 고객이 직접 핏을 돌려보게 합니다.",
+  "tagline": "옷이 아닌 핏을 보여줍니다",
+  "accent": "#ff5252",
+  "logo": { "src": "./assets/3dfit-logo.png", "alt": "" },
+  "shopName": "YOUR STORE",
+  "product": {
+    "category": "상의 › 맨투맨",
+    "name": "오버핏 워싱 맨투맨",
+    "colorway": "올리브 그레이",
+    "price": "39,000원",
+    "image": {
+      "src": "./assets/product/shot-1.png",
+      "alt": "맨투맨을 입고 의자에 앉은 모델의 정면 사진"
+    },
+    "viewerLabel": "맨투맨 착용 3D 뷰. 드래그해서 돌려볼 수 있습니다."
+  },
+  "footerPoints": [
+    { "icon": "ph-camera", "text": "사진만으로 생성" },
+    { "icon": "ph-plugs-connected", "text": "간단한 기존 웹사이트 연동" }
+  ],
+  "bundle": "./bundle/holy_family.snap3d"
+}
