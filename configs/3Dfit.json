@@ -22,5 +22,5 @@
     { "icon": "ph-plugs-connected", "title": "간단한 웹사이트 연동", "desc": "js코드 몇줄로 기존 웹사이트에 렌더러를 넣을 수 있습니다." },
     { "icon": "ph-check-circle", "title": "정확한 재현", "desc": "생성형 모델이 아닙니다. Hallucination없이 의류를 정확하게 재현합니다." }
   ],
-  "bundle": "./bundle/model_in_clothes.snap3d"
+  "bundle": "../assets/bundles/model_in_clothes.snap3d"
 }

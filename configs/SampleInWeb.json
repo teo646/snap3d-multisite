@@ -20,5 +20,5 @@
     { "icon": "ph-camera", "title": "사진만으로 생성", "desc": "" },
     { "icon": "ph-plugs-connected", "title": "간단한 기존 웹사이트 연동", "desc": "" }
   ],
-  "bundle": "./bundle/model_in_clothes.snap3d"
+  "bundle": "../assets/bundles/model_in_clothes.snap3d"
 }
