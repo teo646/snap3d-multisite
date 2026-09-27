@@ -1,8 +1,8 @@
 {
-  "siteName": "ArtIn3D",
+  "siteName": "Art In 3D",
   "metaDescription": "사진만으로 만든 3D 작품 뷰. 기존 상품 상세페이지에 그대로 붙여 고객이 작품을 눈앞에서 처럼 봅니다.",
   "tagline": "작품 사진이 아닌 작품 자체를 보여줍니다",
-  "accent": "#ff5252",
+  "accent": "#8d919b",
   "favicon": "../assets/images/favicon-ArtIn3D.png",
   "logo": { "src": "../assets/images/logo-ArtIn3D.png", "alt": "" },
   "shopName": "EXAMPLE STORE",
