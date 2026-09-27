@@ -9,15 +9,15 @@
   "product": {
     "category": "그림 › 유화",
     "name": "The Holy Family with Saint John the Baptist",
-    "price": "1,000,000원",
+    "price": " - 원",
     "image": {
-      "src": "../assets/product/shot-1.png",
+      "src": "../assets/images/Francesco_Salviati_-_Holy_Family_with_Saint_John_the_Baptist_-_Google_Art_Project.jpg",
       "alt": "Holy Family 사진"
     },
     "viewerLabel": "Holy Family 3D 뷰. 드래그해서 돌려볼 수 있습니다.",
     "options": [
-      { "label": "작가", "type": "text", "value": "라파엘로 산치오" },
-      { "label": "제작년도", "type": "text", "value": "1518" }
+      { "label": "작가", "type": "text", "value": "Francesco Salviati" },
+      { "label": "제작년도", "type": "text", "value": "1540년도" }
     ]
   },
   "featureCards": [

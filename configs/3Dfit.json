@@ -11,7 +11,7 @@
     "name": "워싱 맨투맨",
     "price": "39,000원",
     "image": {
-      "src": "../assets/product/shot-1.png",
+      "src": "../assets/images/shot-1.png",
       "alt": "맨투맨을 입고 의자에 앉은 모델의 정면 사진"
     },
     "viewerLabel": "맨투맨 착용 3D 뷰. 드래그해서 돌려볼 수 있습니다.",
