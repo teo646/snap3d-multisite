@@ -26,7 +26,7 @@
       "title": "사진만으로 제작",
       "desc": "다양한 각도에서 촬영한 작품의 사진만으로 3차원 렌더링이 가능합니다.",
       "detail": "작품을 여러 각도에서 촬영한 사진만으로 입체 모델을 만들어내기 때문에, 별도의 3D 스캔 장비 없이도 미술관이나 갤러리가 보유한 작품을 손쉽게 디지털화할 수 있어요.",
-      "image": "../assets/images/Francesco_Salviati_-_Holy_Family_with_Saint_John_the_Baptist_-_Google_Art_Project.jpg"
+      "image": "../assets/images/image_only.png"
     },
     {
       "icon": "ph-plugs-connected",
