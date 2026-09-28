@@ -43,12 +43,23 @@ button { font: inherit; color: inherit; }
   background-size: 24px 24px;
 }
 
+/* solid, so it sits on top of .page's dot-grid background and hides the
+   dots behind the header instead of showing them through it */
+.site-header { flex: none; background: var(--chrome-bg); }
 h1 {
   display: flex; align-items: center; gap: 12px; flex: none;
   font: 400 var(--font-size-big)/1.2 var(--font-sans); margin: 0;
 }
 h1 .mark { display: block; width: 70px; height: 70px; object-fit: contain; flex-shrink: 0; mix-blend-mode: screen;}
 .tagline { flex: none; font: 400 var(--font-size-middle)/1.35 var(--font-sans); margin: 14px 0 28px; color: var(--chrome-ink-2); }
+
+.site-footer {
+  flex: none; margin-top: 32px; padding-top: 20px;
+  border-top: 1px solid var(--chrome-line);
+  font: 400 var(--font-size-small)/1.6 var(--font-sans); color: var(--chrome-ink-2);
+}
+.site-footer p { margin: 0 0 4px; }
+.site-footer p:last-child { margin-bottom: 0; }
 
 /* ---------- before / after switch ---------- */
 .compare {
@@ -108,7 +119,7 @@ h1 .mark { display: block; width: 70px; height: 70px; object-fit: contain; flex-
 .feature-card { padding: 20px; }
 .feature-card-title {
   margin: 0; display: flex; align-items: center; gap: 8px;
-  font: 400 var(--font-size-middle)/1.35 var(--font-sans); color: var(--chrome-ink);
+  font: 400 var(--font-size-middle)/1.35 var(--font-sans); color: var(--chrome-ink-2);
 }
 .feature-card-title i { font-size: var(--font-size-middle); color: var(--accent); }
 .feature-card-desc {
