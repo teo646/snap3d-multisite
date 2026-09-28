@@ -93,24 +93,135 @@
 
     const list = $('feature-cards');
     list.innerHTML = '';
-    for (const card of config.featureCards) {
-      const el = document.createElement('div');
-      el.className = 'card feature-card';
-      const title = document.createElement('p');
-      title.className = 'feature-card-title';
-      const icon = document.createElement('i');
-      icon.className = `ph ${card.icon}`;
-      icon.setAttribute('aria-hidden', 'true');
-      title.append(icon, document.createTextNode(card.title));
-      const desc = document.createElement('p');
-      desc.className = 'feature-card-desc';
-      desc.textContent = card.desc;
-      el.append(title, desc);
-      list.append(el);
-    }
+    for (const card of config.featureCards) list.append(buildFeatureCard(card));
 
     return config.bundle;
   }
+
+  // ---------- feature cards: click one to grow it in place ----------
+  //
+  // No navigation, no separate page - the card itself is pinned at its own
+  // on-screen rect (position: fixed, via getBoundingClientRect) and then
+  // animated to a larger, centered rect purely with CSS transitions on
+  // top/left/width/height (a FLIP animation). Collapsing reverses it back
+  // to that same original rect. A backdrop dims the rest of the page and
+  // closes the card on click; Escape does too.
+
+  function buildFeatureCard(card) {
+    const el = document.createElement('div');
+    el.className = 'card feature-card';
+    el.tabIndex = 0;
+    el.setAttribute('role', 'button');
+    el.setAttribute('aria-expanded', 'false');
+
+    const closeBtn = document.createElement('button');
+    closeBtn.type = 'button';
+    closeBtn.className = 'feature-card-close';
+    closeBtn.setAttribute('aria-label', '닫기');
+    closeBtn.textContent = '×';
+
+    const title = document.createElement('p');
+    title.className = 'feature-card-title';
+    const icon = document.createElement('i');
+    icon.className = `ph ${card.icon}`;
+    icon.setAttribute('aria-hidden', 'true');
+    title.append(icon, document.createTextNode(card.title));
+
+    const desc = document.createElement('p');
+    desc.className = 'feature-card-desc';
+    desc.textContent = card.desc;
+
+    const detail = document.createElement('p');
+    detail.className = 'feature-card-detail';
+    detail.textContent = card.detail || card.desc;
+
+    el.append(closeBtn, title, desc, detail);
+
+    el.addEventListener('click', (e) => {
+      if (e.target === closeBtn) return collapseCard(el);
+      if (!el.classList.contains('is-expanded')) expandCard(el);
+    });
+    el.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      e.preventDefault();
+      el.classList.contains('is-expanded') ? collapseCard(el) : expandCard(el);
+    });
+
+    return el;
+  }
+
+  const backdrop = $('card-backdrop');
+  let expandedCard = null;
+  let collapsedRect = null;
+
+  function expandCard(el) {
+    if (expandedCard) collapseCard(expandedCard, { immediate: true });
+
+    const rect = el.getBoundingClientRect();
+    collapsedRect = rect;
+    expandedCard = el;
+
+    pinRect(el, rect);
+    void el.offsetWidth; // commit the "still where it was" state before animating away from it
+    el.classList.add('is-animating', 'is-expanded');
+    el.setAttribute('aria-expanded', 'true');
+
+    const width = Math.min(640, innerWidth * 0.92);
+    const height = Math.min(520, innerHeight * 0.8);
+    pinRect(el, {
+      top: Math.max(16, (innerHeight - height) / 2),
+      left: (innerWidth - width) / 2,
+      width,
+      height,
+    });
+
+    backdrop.hidden = false;
+    requestAnimationFrame(() => backdrop.classList.add('show'));
+    document.body.style.overflow = 'hidden';
+  }
+
+  function collapseCard(el, { immediate = false } = {}) {
+    if (!el.classList.contains('is-expanded')) return;
+    el.classList.remove('is-expanded');
+    el.setAttribute('aria-expanded', 'false');
+
+    if (immediate || !collapsedRect) {
+      unpinRect(el);
+    } else {
+      pinRect(el, collapsedRect);
+      el.addEventListener('transitionend', function done(e) {
+        if (e.propertyName !== 'width') return;
+        el.removeEventListener('transitionend', done);
+        unpinRect(el);
+      });
+    }
+
+    backdrop.classList.remove('show');
+    document.body.style.overflow = '';
+    if (expandedCard === el) expandedCard = null;
+  }
+
+  function pinRect(el, rect) {
+    el.style.position = 'fixed';
+    el.style.margin = '0';
+    el.style.top = `${rect.top}px`;
+    el.style.left = `${rect.left}px`;
+    el.style.width = `${rect.width}px`;
+    el.style.height = `${rect.height}px`;
+  }
+
+  function unpinRect(el) {
+    el.classList.remove('is-animating');
+    el.style.position = el.style.margin = el.style.top = el.style.left = el.style.width = el.style.height = '';
+  }
+
+  backdrop.addEventListener('click', () => expandedCard && collapseCard(expandedCard));
+  backdrop.addEventListener('transitionend', (e) => {
+    if (e.propertyName === 'opacity' && !backdrop.classList.contains('show')) backdrop.hidden = true;
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && expandedCard) collapseCard(expandedCard);
+  });
 
   loadConfig().then(applyConfig).then(startViewer).catch((error) => console.error(error));
 

@@ -116,16 +116,50 @@ h1 .mark { display: block; width: 70px; height: 70px; object-fit: contain; flex-
   flex: none; display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 12px;
 }
-.feature-card { padding: 20px; }
+.feature-card { padding: 20px; position: relative; text-align: left; cursor: pointer; }
+.feature-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .feature-card-title {
   margin: 0; display: flex; align-items: center; gap: 8px;
   font: 400 var(--font-size-middle)/1.35 var(--font-sans); color: var(--chrome-ink-2);
+  transition: font-size 380ms var(--ease-out);
 }
 .feature-card-title i { font-size: var(--font-size-middle); color: var(--accent); }
 .feature-card-desc {
   margin: 8px 0 0; font: 400 var(--font-size-small)/1.6 var(--font-sans);
   color: var(--chrome-ink-2);
 }
+.feature-card-detail {
+  display: none; margin: 12px 0 0;
+  font: 400 var(--font-size-small)/1.6 var(--font-sans); color: var(--chrome-ink-2);
+}
+.feature-card-close { display: none; }
+
+/* clicking a card grows it in place (FLIP: JS pins it at its own rect with
+   position: fixed, then animates top/left/width/height to the expanded
+   rect) rather than navigating anywhere, so it never feels like a redirect. */
+.feature-card.is-animating {
+  transition: top 380ms var(--ease-out), left 380ms var(--ease-out),
+              width 380ms var(--ease-out), height 380ms var(--ease-out);
+}
+.feature-card.is-expanded {
+  z-index: 50; cursor: default; overflow-y: auto;
+  box-shadow: 0 40px 80px -24px rgba(0, 0, 0, 0.6);
+}
+.feature-card.is-expanded .feature-card-title { font-size: var(--font-size-big); }
+.feature-card.is-expanded .feature-card-detail { display: block; }
+.feature-card.is-expanded .feature-card-close {
+  display: grid; place-items: center;
+  position: absolute; top: 12px; right: 12px; width: 32px; height: 32px; padding: 0;
+  border: 0; border-radius: 999px; background: var(--chrome-bg); color: var(--chrome-ink);
+  font-size: 20px; line-height: 1; cursor: pointer;
+}
+
+.card-backdrop {
+  position: fixed; inset: 0; z-index: 40;
+  background: rgba(10, 11, 13, 0.72);
+  opacity: 0; transition: opacity 300ms var(--ease-out);
+}
+.card-backdrop.show { opacity: 1; }
 
 @media (max-width: 767px) {
   .page { padding: 28px 16px 24px; }
