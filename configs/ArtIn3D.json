@@ -23,23 +23,23 @@
   "featureCards": [
     {
       "icon": "ph-camera",
-      "title": "사진만으로 제작",
-      "desc": "다양한 각도에서 촬영한 작품의 사진만으로 3차원 렌더링이 가능합니다.",
-      "detail": "작품을 여러 각도에서 촬영한 사진만으로 입체 모델을 만들어내기 때문에, 별도의 3D 스캔 장비 없이도 미술관이나 갤러리가 보유한 작품을 손쉽게 디지털화할 수 있어요.",
+      "title": "사진만 보내면 끝",
+      "desc": "작품 사진만 있으면 복잡한 과정없이 3d 결과물을 만듭니다.",
+      "detail": "작품을 보낼 필요도, 방문 스캔을 할 필요도 없습니다. 이용자는 다양한 각도에서 촬영한 작품 사진만 찍어 보내면 됩니다. 사진만으로 작품의 질감과 광택을 담아내는 3차원 결과물을 만들어 드립니다. 위 예시도 스마트폰으로 촬영된 80장의 사진으로 만들어졌습니다.",
       "image": "../assets/images/image_only.png"
     },
     {
       "icon": "ph-plugs-connected",
       "title": "간단한 웹사이트 연동",
-      "desc": "js코드 몇줄로 기존 웹사이트에 렌더러를 넣을 수 있습니다.",
-      "detail": "기존 작품 소개 페이지 레이아웃을 유지한 채로, script 태그 한 줄만 추가하면 3D 뷰어를 바로 붙일 수 있습니다. 별도의 백엔드 작업이 필요 없어요.",
-      "image": "../assets/images/Francesco_Salviati_-_Holy_Family_with_Saint_John_the_Baptist_-_Google_Art_Project.jpg",
+      "desc": "웹사이트에 이미지를 넣듯, 뷰어를 넣을 수 있습니다.",
+      "detail": "기존 페이지에 JS 코드 몇줄로 뷰어를 삽입합니다. 웹사이트를 다시 설계할 필요없이 작은 수정만 있으면 됩니다. 하단의 간단한 사용 예시를 작동시켜서 얼마나 간단한지 직접 확인해 보세요.",
+      "image": "../assets/images/quick_start.png",
       "download": "../simple_example.html"
     },
     {
       "icon": "ph-check-circle",
       "title": "정확한 재현",
-      "desc": "생성형 모델이 아닙니다. 작품을 있는 그대로 재현합니다.",
+      "desc": "생성형 인공지능이 아닙니다. 작품을 있는 그대로 재현합니다.",
       "detail": "생성형 AI가 임의로 형태를 채워 넣는 방식이 아니라, 촬영된 사진 그대로의 붓터치와 색감, 표면 질감을 반영해서 재현하기 때문에 원작의 디테일을 왜곡 없이 전달할 수 있어요.",
       "image": "../assets/images/Francesco_Salviati_-_Holy_Family_with_Saint_John_the_Baptist_-_Google_Art_Project.jpg"
     }
