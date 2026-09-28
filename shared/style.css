@@ -132,7 +132,17 @@ h1 .mark { display: block; width: 70px; height: 70px; object-fit: contain; flex-
   display: none; margin: 12px 0 0;
   font: 400 var(--font-size-small)/1.6 var(--font-sans); color: var(--chrome-ink-2);
 }
+.feature-card-image {
+  display: none; width: 100%; max-height: 220px; object-fit: cover;
+  border-radius: 8px; margin: 12px 0 0;
+}
 .feature-card-close { display: none; }
+.feature-card-download {
+  display: none; margin-top: 16px; align-items: center; justify-content: center;
+  gap: 8px; padding: 10px 16px; border-radius: 999px;
+  background: var(--accent); color: var(--chrome-floor);
+  font: 600 var(--font-size-small)/1.2 var(--font-sans); text-decoration: none;
+}
 
 /* clicking a card grows it in place (FLIP: JS pins it at its own rect with
    position: fixed, then animates top/left/width/height to the expanded
@@ -146,7 +156,10 @@ h1 .mark { display: block; width: 70px; height: 70px; object-fit: contain; flex-
   box-shadow: 0 40px 80px -24px rgba(0, 0, 0, 0.6);
 }
 .feature-card.is-expanded .feature-card-title { font-size: var(--font-size-big); }
+.feature-card.is-expanded .feature-card-desc { display: none; }
+.feature-card.is-expanded .feature-card-image { display: block; }
 .feature-card.is-expanded .feature-card-detail { display: block; }
+.feature-card.is-expanded .feature-card-download { display: inline-flex; }
 .feature-card.is-expanded .feature-card-close {
   display: grid; place-items: center;
   position: absolute; top: 12px; right: 12px; width: 32px; height: 32px; padding: 0;

@@ -8,6 +8,10 @@
 # product.image.src, favicon, bundle, ...) point into it with "../assets/..."
 # paths rather than each site keeping its own copy.
 #
+# simple_example.html is copied to the dist root as-is - it's the minimal,
+# self-contained viewer demo the "간단하게 웹사이트 연동" feature card links
+# to for download (see configs/*.json's featureCards[].download).
+#
 # Nothing under dist/ is checked in - this script (run locally for preview,
 # or by the Pages workflow) is what produces it.
 set -euo pipefail
@@ -18,6 +22,7 @@ cd "$root"
 rm -rf dist
 mkdir -p dist
 cp index.html dist/
+cp simple_example.html dist/
 cp -R assets dist/assets
 
 sites=()

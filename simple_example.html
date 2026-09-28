@@ -6,12 +6,13 @@
 <title>snap3d-viewer 최소 사용 예시</title>
 </head>
 <body>
+  <h1>SIMPLE VIEWER EXAMPLE</h1>
   <canvas id="canvas" style="width: 600px; height: 600px;"></canvas>
 
   <script src="https://teo646.github.io/snap3d-viewer/dist/viewer.js"></script>
   <script>
     const canvas = document.getElementById('canvas');
-    const bundle = 'https://teo646.github.io/snap3d-multisite/assets/bundles/tile01.snap3d';
+    const bundle = 'https://teo646.github.io/snap3d-multisite/assets/bundles/holy_family.snap3d';
     const viewer = new Snap3dViewer(canvas, bundle);
     viewer.start();
   </script>

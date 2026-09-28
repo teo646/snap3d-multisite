@@ -49,10 +49,12 @@ class Handler(http.server.BaseHTTPRequestHandler):
         self.send_file(resolved)
 
     def resolve(self, path):
-        path = path.lstrip("/")
-        if path == "":
-            return os.path.join(ROOT, "index.html")
+        path = path.lstrip("/") or "index.html"
         if path.startswith("assets/"):
+            return os.path.join(ROOT, path)
+        # Any other root-level file build.sh also copies as-is (index.html,
+        # simple_example.html, ...) - same rule as "cp <file> dist/" there.
+        if "/" not in path and os.path.isfile(os.path.join(ROOT, path)):
             return os.path.join(ROOT, path)
 
         site, _, rest = path.partition("/")

@@ -127,6 +127,12 @@
     icon.setAttribute('aria-hidden', 'true');
     title.append(icon, document.createTextNode(card.title));
 
+    // Only shown once expanded (replacing desc) - see .feature-card.is-expanded in style.css.
+    const image = document.createElement('img');
+    image.className = 'feature-card-image';
+    if (card.image) image.src = card.image;
+    image.alt = card.title;
+
     const desc = document.createElement('p');
     desc.className = 'feature-card-desc';
     desc.textContent = card.desc;
@@ -135,7 +141,18 @@
     detail.className = 'feature-card-detail';
     detail.textContent = card.detail || card.desc;
 
-    el.append(closeBtn, title, desc, detail);
+    el.append(closeBtn, title, image, desc, detail);
+
+    // Optional: a download link shown alongside the detail once expanded -
+    // used by the "간단하게 웹사이트 연동" card to hand out simple_example.html.
+    if (card.download) {
+      const link = document.createElement('a');
+      link.className = 'feature-card-download';
+      link.href = card.download;
+      link.setAttribute('download', '');
+      link.textContent = `${card.download.split('/').pop()} 다운로드`;
+      el.append(link);
+    }
 
     el.addEventListener('click', (e) => {
       if (e.target === closeBtn) return collapseCard(el);
