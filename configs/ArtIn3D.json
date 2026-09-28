@@ -34,12 +34,12 @@
       "desc": "웹사이트에 이미지를 넣듯, 뷰어를 넣을 수 있습니다.",
       "detail": "기존 페이지에 JS 코드 몇줄로 뷰어를 삽입합니다. 웹사이트를 다시 설계할 필요없이 작은 수정만 있으면 됩니다. 하단의 간단한 사용 예시를 작동시켜서 얼마나 간단한지 직접 확인해 보세요. 다운로드 후 클릭하면 자동으로 열립니다.",
       "image": "../assets/images/quick_start.png",
-      "download": "../simple_example.html"
+      "download": "../ArtIn3D_example.html"
     },
     {
       "icon": "ph-check-circle",
       "title": "저렴한 가격",
-      "desc": "3D 모델링 외주 평균가의 1/7 수준으로 제공합니다.",
+      "desc": "3D 모델링 외주 평균가의 1/10 수준으로 제공합니다.",
       "detail": "",
       "image": "../assets/images/price_table.png"
     },

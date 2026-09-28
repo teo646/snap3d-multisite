@@ -165,6 +165,7 @@ h1 .mark { display: block; width: 70px; height: 70px; object-fit: contain; flex-
 .feature-card.is-expanded .feature-card-image { display: block; }
 .feature-card.is-expanded .feature-card-detail { display: block; }
 .feature-card.is-expanded .feature-card-download { display: inline-flex; }
+.feature-card-placeholder { visibility: hidden; }
 .feature-card.is-expanded .feature-card-close {
   display: grid; place-items: center;
   position: absolute; top: 12px; right: 12px; width: 32px; height: 32px; padding: 0;

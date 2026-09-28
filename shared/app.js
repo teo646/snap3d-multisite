@@ -170,6 +170,7 @@
   const backdrop = $('card-backdrop');
   let expandedCard = null;
   let collapsedRect = null;
+  let placeholder = null;
 
   function expandCard(el) {
     if (expandedCard) collapseCard(expandedCard, { immediate: true });
@@ -177,6 +178,15 @@
     const rect = el.getBoundingClientRect();
     collapsedRect = rect;
     expandedCard = el;
+
+    // Pinning el to position: fixed pulls it out of the grid, which would
+    // otherwise let the other cards slide over to fill its cell. A same-sized
+    // invisible placeholder left in its spot keeps them put.
+    placeholder = document.createElement('div');
+    placeholder.className = 'feature-card-placeholder';
+    placeholder.style.width = `${rect.width}px`;
+    placeholder.style.height = `${rect.height}px`;
+    el.before(placeholder);
 
     pinRect(el, rect);
     void el.offsetWidth; // commit the "still where it was" state before animating away from it
@@ -230,6 +240,10 @@
   function unpinRect(el) {
     el.classList.remove('is-animating');
     el.style.position = el.style.margin = el.style.top = el.style.left = el.style.width = el.style.height = '';
+    if (placeholder) {
+      placeholder.remove();
+      placeholder = null;
+    }
   }
 
   backdrop.addEventListener('click', () => expandedCard && collapseCard(expandedCard));

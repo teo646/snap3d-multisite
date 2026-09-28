@@ -22,7 +22,9 @@ cd "$root"
 rm -rf dist
 mkdir -p dist
 cp index.html dist/
-cp simple_example.html dist/
+cp 3Dfit_example.html dist/
+cp ArtIn3D_example.html dist/
+cp SampleInWeb_example.html dist/
 cp -R assets dist/assets
 
 sites=()
