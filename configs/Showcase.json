@@ -1,0 +1,36 @@
+{
+  "siteType": "show_case",
+  "siteName": "의류 3차원 렌더링 데모",
+  "bundles": [
+    {
+      "file": "../assets/bundles/clothes01.snap3d",
+      "image": "../assets/images/clothes01_image.png",
+      "label": "clothes01"
+    },
+    {
+      "file": "../assets/bundles/clothes04.snap3d",
+      "image": "../assets/images/clothes04_image.png",
+      "label": "clothes04"
+    },
+    {
+      "file": "../assets/bundles/clothes05.snap3d",
+      "image": "../assets/images/clothes05_image.png",
+      "label": "clothes05"
+    },
+    {
+      "file": "../assets/bundles/mom_in_clothes.snap3d",
+      "image": "../assets/images/mom_in_clothes_image.png",
+      "label": "Model In Clothes"
+    },
+    {
+      "file": "../assets/bundles/model_in_clothes.snap3d",
+      "image": "../assets/images/model_in_clothes_image.png",
+      "label": "Model In Clothes"
+    },
+    {
+      "file": "../assets/bundles/model2_in_clothes.snap3d",
+      "image": "../assets/images/model2_in_clothes_image.png",
+      "label": "Model In Clothes"
+    }
+  ]
+}

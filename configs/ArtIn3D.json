@@ -1,4 +1,5 @@
 {
+  "siteType": "marketing",
   "siteName": "Art In 3D",
   "metaDescription": "사진만으로 만든 3D 작품 뷰. 기존 상품 상세페이지에 그대로 붙여 고객이 작품을 눈앞에서 처럼 봅니다.",
   "tagline": "작품 사진이 아닌 작품 자체를 보여줍니다",
@@ -32,7 +33,7 @@
       "icon": "ph-plugs-connected",
       "title": "간단한 웹사이트 연동",
       "desc": "웹사이트에 이미지를 넣듯, 뷰어를 넣을 수 있습니다.",
-      "detail": "기존 페이지에 JS 코드 몇줄로 뷰어를 삽입합니다. 웹사이트를 다시 설계할 필요없이 작은 수정만 있으면 됩니다.",
+      "detail": "기존 페이지에 JS 코드 몇줄로 뷰어를 삽입합니다. 웹사이트를 다시 설계할 필요없이 작은 수정만 있으면 됩니다. 이미지를 넣듯 간단하게 뷰어를 추가할 수 있습니다.",
       "image": "../assets/images/quick_start.png",
       "download": "../ArtIn3D_example.html"
     },

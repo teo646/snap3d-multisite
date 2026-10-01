@@ -1,0 +1,16 @@
+/* show_case: no theme, no chrome - just a row of thumbnail buttons and the
+   viewer filling the rest of the screen. */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; display: flex; flex-direction: column; font-family: sans-serif; }
+
+#bundle-picker { flex: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 8px; }
+#bundle-picker button {
+  padding: 0; border: 2px solid transparent; border-radius: 4px;
+  background: none; cursor: pointer; line-height: 0;
+}
+#bundle-picker button[aria-pressed='true'] { border-color: #333; }
+#bundle-picker img { display: block; width: 64px; height: 64px; object-fit: cover; border-radius: 2px; }
+
+canvas { flex: 1 1 auto; width: 100%; height: 100%; display: block; cursor: grab; }
+canvas.shs-dragging { cursor: grabbing; }

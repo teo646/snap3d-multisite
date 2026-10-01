@@ -9,6 +9,7 @@ actually gets deployed - this is a dev-only stand-in for that layout.
 Usage: scripts/dev.py [port]   (default port 8000)
 """
 import http.server
+import json
 import mimetypes
 import os
 import sys
@@ -26,6 +27,15 @@ def site_names():
         for f in os.listdir(CONFIGS_DIR)
         if f.endswith(".json")
     }
+
+
+def site_type(site):
+    """Mirrors build.sh's `jq -r '.siteType // "marketing"'`."""
+    try:
+        with open(os.path.join(CONFIGS_DIR, f"{site}.json")) as f:
+            return json.load(f).get("siteType", "marketing")
+    except (OSError, ValueError):
+        return "marketing"
 
 
 class Handler(http.server.BaseHTTPRequestHandler):
@@ -63,7 +73,11 @@ class Handler(http.server.BaseHTTPRequestHandler):
         rest = rest or "index.html"
         if rest == "config.json":
             return os.path.join(CONFIGS_DIR, f"{site}.json")
-        if rest in ("index.html", "app.js", "style.css", "shop.css"):
+
+        if site_type(site) == "show_case":
+            if rest in ("index.html", "app.js", "showcase.css"):
+                return os.path.join(SHARED_DIR, "showcase", rest)
+        elif rest in ("index.html", "app.js", "style.css", "shop.css"):
             return os.path.join(SHARED_DIR, rest)
         return None
 
