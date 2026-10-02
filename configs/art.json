@@ -1,0 +1,16 @@
+{
+  "siteType": "show_case",
+  "siteName": "예술품  3차원 데모",
+  "bundles": [
+    {
+      "file": "../assets/bundles/bowl2.snap3d",
+      "image": "../assets/images/clothes01_image.png",
+      "label": "clothes01"
+    },
+    {
+      "file": "../assets/bundles/clothes04.snap3d",
+      "image": "../assets/images/clothes04_image.png",
+      "label": "clothes04"
+    }
+  ]
+}
