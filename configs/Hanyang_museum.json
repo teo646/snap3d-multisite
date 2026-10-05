@@ -1,0 +1,21 @@
+{
+  "siteType": "show_case",
+  "siteName": "한양대학교 박물관 테스트 결과",
+  "bundles": [
+    {
+      "file": "../assets/bundles/stone_axe.snap3d",
+      "image": "../assets/images/stone_axe.png",
+      "label": "stone_axe"
+    },
+    {
+      "file": "../assets/bundles/reflective_pottery_sherd.snap3d",
+      "image": "../assets/images/reflective_pottery_sherd.png",
+      "label": "reflective_pottery_sherd"
+    },
+    {
+      "file": "../assets/bundles/pottery_sherd.snap3d",
+      "image": "../assets/images/pottery_sherd.png",
+      "label": "pottery_sherd"
+    }
+  ]
+}

@@ -40,7 +40,11 @@ def site_type(site):
 
 class Handler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
-        path = urllib.parse.urlsplit(self.path).path
+        # urlsplit() leaves percent-encoding (e.g. "%20") untouched, so a
+        # config filename with a space ("art copy.json") would never match
+        # site_names() without unquoting first - the browser always encodes
+        # the space when it requests the page.
+        path = urllib.parse.unquote(urllib.parse.urlsplit(self.path).path)
 
         # "/<site>" with no trailing slash would break the page's relative
         # asset URLs (app.js, ../assets/...), so send it to "/<site>/".
@@ -48,7 +52,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
             bare_site = path.lstrip("/")
             if bare_site and "/" not in bare_site and bare_site in site_names():
                 self.send_response(302)
-                self.send_header("Location", f"/{bare_site}/")
+                self.send_header("Location", f"/{urllib.parse.quote(bare_site)}/")
                 self.end_headers()
                 return
 

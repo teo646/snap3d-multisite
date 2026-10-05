@@ -1,0 +1,16 @@
+{
+  "siteType": "show_case",
+  "siteName": "추가 테스트 결과",
+  "bundles": [
+    {
+      "file": "../assets/bundles/stone.snap3d",
+      "image": "../assets/images/stone.png",
+      "label": "stone"
+    },
+    {
+      "file": "../assets/bundles/cup.snap3d",
+      "image": "../assets/images/cup.png",
+      "label": "cup"
+    }
+  ]
+}
