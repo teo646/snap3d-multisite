@@ -1,0 +1,11 @@
+{
+  "siteType": "show_case",
+  "siteName": "그라더스 3d 렌더링",
+  "bundles": [
+    {
+      "file": "../assets/bundles/boots02.snap3d",
+      "image": "../assets/images/boots02.png",
+      "label": "boots02"
+    }
+  ]
+}
