@@ -5,17 +5,20 @@
     {
       "file": "../assets/bundles/stone_axe.snap3d",
       "image": "../assets/images/stone_axe.png",
-      "label": "stone_axe"
+      "label": "stone_axe",
+      "desc": "주먹 도끼"
     },
     {
       "file": "../assets/bundles/reflective_pottery_sherd.snap3d",
       "image": "../assets/images/reflective_pottery_sherd.png",
-      "label": "reflective_pottery_sherd"
+      "label": "reflective_pottery_sherd",
+      "desc": "반사광이 있는 도자기 조각"
     },
     {
       "file": "../assets/bundles/pottery_sherd.snap3d",
       "image": "../assets/images/pottery_sherd.png",
-      "label": "pottery_sherd"
+      "label": "pottery_sherd",
+      "desc": "반사광이 없는 도자기 조각"
     }
   ]
 }

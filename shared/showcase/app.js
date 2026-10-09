@@ -22,6 +22,12 @@
     return path.split('/').pop().replace(/\.[^.]+$/, '').replace(/[_-]+/g, ' ');
   }
 
+  function showDesc(bundle) {
+    const el = $('bundle-desc');
+    el.textContent = bundle.desc || '';
+    el.hidden = !bundle.desc;
+  }
+
   let viewer = null;
 
   function showBundle(bundle) {
@@ -61,6 +67,7 @@
 
     function select(i) {
       for (const [j, btn] of buttons.entries()) btn.setAttribute('aria-pressed', String(j === i));
+      showDesc(bundles[i]);
       showBundle(bundles[i]);
     }
 

@@ -1,0 +1,30 @@
+{
+  "siteType": "show_case",
+  "siteName": "박물관 데모 렌더링",
+  "bundles": [
+    {
+      "file": "../assets/bundles/stone_head.snap3d",
+      "image": "../assets/images/stone_head_image.png",
+      "label": "stone",
+      "desc": "베트남 돌상"
+    },
+    {
+      "file": "../assets/bundles/stone.snap3d",
+      "image": "../assets/images/stone.png",
+      "label": "stone",
+      "desc": "돌"
+    },
+    {
+      "file": "../assets/bundles/cup.snap3d",
+      "image": "../assets/images/cup.png",
+      "label": "cup",
+      "desc": "유약 처리된 도자기"
+    },
+    {
+      "file": "../assets/bundles/reflective_pottery_sherd.snap3d",
+      "image": "../assets/images/reflective_pottery_sherd.png",
+      "label": "reflective_pottery_sherd",
+      "desc": "반사광이 있는 도자기 조각"
+    }
+  ]
+}

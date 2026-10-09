@@ -5,7 +5,8 @@
     {
       "file": "../assets/bundles/boots02.snap3d",
       "image": "../assets/images/boots02.png",
-      "label": "boots02"
+      "label": "boots02",
+      "desc": "사용하던 그라더스 제품 렌더링 결과"
     }
   ]
 }
