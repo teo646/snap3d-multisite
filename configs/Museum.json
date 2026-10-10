@@ -25,6 +25,18 @@
       "image": "../assets/images/reflective_pottery_sherd.png",
       "label": "reflective_pottery_sherd",
       "desc": "반사광이 있는 도자기 조각"
+    },
+    {
+      "file": "../assets/bundles/Pensive_Bodhisattva78_unorm8.snap3d",
+      "image": "../assets/images/Pensive_Bodhisattva78.jpg",
+      "label": "Pensive_Bodhisattva78",
+      "desc": "옛 국보 78호"
+    },
+    {
+      "file": "../assets/bundles/Pensive_Bodhisattva83_unorm8.snap3d",
+      "image": "../assets/images/Pensive_Bodhisattva83.jpg",
+      "label": "Pensive_Bodhisattva83",
+      "desc": "옛 국보 83호"
     }
   ]
 }
