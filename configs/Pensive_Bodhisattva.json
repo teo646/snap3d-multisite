@@ -1,6 +1,7 @@
 {
   "siteType": "show_case",
   "siteName": "Pensive Bodhisattva",
+  "bgColor": "#000000",
   "bundles": [
     {
       "file": "../assets/bundles/Pensive_Bodhisattva78_unorm8.snap3d",

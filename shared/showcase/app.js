@@ -78,6 +78,9 @@
     .then((config) => {
       document.title = config.siteName || 'Showcase';
       if (config.favicon) $('favicon').setAttribute('href', config.favicon);
+      // The viewer's own render clears to transparent, so whatever sits
+      // behind the canvas is what actually shows as its "background".
+      if (config.bgColor) $('viewer-area').style.backgroundColor = config.bgColor;
       buildPicker(config.bundles || []);
     })
     .catch((error) => console.error(error));
