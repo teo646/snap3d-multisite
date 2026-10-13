@@ -18,11 +18,6 @@
       "label": "clothes05"
     },
     {
-      "file": "../assets/bundles/mom_in_clothes.snap3d",
-      "image": "../assets/images/mom_in_clothes_image.png",
-      "label": "Model In Clothes"
-    },
-    {
       "file": "../assets/bundles/model_in_clothes.snap3d",
       "image": "../assets/images/model_in_clothes_image.png",
       "label": "Model In Clothes"
